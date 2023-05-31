@@ -82,13 +82,14 @@ Additional information - Armored version of Docker GPG key works just fine. In f
 - name: "Add Docker repository"
   apt_repository:
     filename: docker
-    repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg_armored] https://download.docker.com/linux/ubuntu jammy stable"
+    repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg_armored] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable"
     state: present
 ```
 
 - `apt_repository` - Add specified repository into `/etc/apt/sources.list.d`, [*reference*](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html).
   - `filename` - `.list` extension will be automatically added, [*reference*](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-filename).
-  - `repo` - Source string of repository, [*reference*](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-repo). Be sure to replace `jammy` with the version of Ubuntu running on your nodes!
+  - `repo` - Source string of repository, [*reference*](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-repo).
+    - `{{ ansible_lsb.codename }}` - Leverage Ansible facts to dynamically obtain version of Ubuntu (e.g. `bionic`, `focal`, `jammy`), [*reference*](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_vars_facts.html#ansible-facts)
   - `state` - State of source string, [*reference*](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-state).
 
 ---
@@ -160,7 +161,7 @@ Feel free to adapt this playbook to fit your environment/needs!
     - name: "Add Docker repository"
       apt_repository:
         filename: docker
-        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg_armored] https://download.docker.com/linux/ubuntu jammy stable"
+        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg_armored] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable"
         state: present
 
     - name: Install Docker and relevant packages
