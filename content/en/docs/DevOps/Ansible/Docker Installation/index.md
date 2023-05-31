@@ -89,7 +89,7 @@ Additional information - Armored version of Docker GPG key works just fine. In f
 - `apt_repository` - Add specified repository into `/etc/apt/sources.list.d`, [*reference*](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html).
   - `filename` - `.list` extension will be automatically added, [*reference*](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-filename).
   - `repo` - Source string of repository, [*reference*](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-repo).
-    - `{{ ansible_lsb.codename }}` - Leverage Ansible facts to dynamically obtain version of Ubuntu (e.g. `bionic`, `focal`, `jammy`), [*reference*](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_vars_facts.html#ansible-facts)
+    - `{{ ansible_lsb.codename }}` - Leverage Ansible facts to dynamically obtain version of Ubuntu (e.g. `bionic`, `focal`, `jammy`), [*reference*](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_vars_facts.html#ansible-facts).
   - `state` - State of source string, [*reference*](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-state).
 
 ---
