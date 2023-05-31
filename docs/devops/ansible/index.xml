@@ -72,7 +72,7 @@
 &lt;li>&lt;code>filename&lt;/code> - &lt;code>.list&lt;/code> extension will be automatically added, &lt;a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-filename">&lt;em>reference&lt;/em>&lt;/a>.&lt;/li>
 &lt;li>&lt;code>repo&lt;/code> - Source string of repository, &lt;a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-repo">&lt;em>reference&lt;/em>&lt;/a>.
 &lt;ul>
-&lt;li>&lt;code>{{ ansible_lsb.codename }}&lt;/code> - Leverage Ansible facts to dynamically obtain version of Ubuntu (e.g. &lt;code>bionic&lt;/code>, &lt;code>focal&lt;/code>, &lt;code>jammy&lt;/code>), &lt;a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_vars_facts.html#ansible-facts">&lt;em>reference&lt;/em>&lt;/a>&lt;/li>
+&lt;li>&lt;code>{{ ansible_lsb.codename }}&lt;/code> - Leverage Ansible facts to dynamically obtain version of Ubuntu (e.g. &lt;code>bionic&lt;/code>, &lt;code>focal&lt;/code>, &lt;code>jammy&lt;/code>), &lt;a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_vars_facts.html#ansible-facts">&lt;em>reference&lt;/em>&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;code>state&lt;/code> - State of source string, &lt;a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html#parameter-state">&lt;em>reference&lt;/em>&lt;/a>.&lt;/li>
